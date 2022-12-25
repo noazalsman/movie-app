@@ -6,6 +6,7 @@ import MovieListHeading from "./components/MovieListHeading";
 import SearchBox from "./components/SearchBox";
 import AddFavorites from "./components/AddFavorites";
 import RemoveFavorites from "./components/RemoveFavorites";
+import Description from "./components/Description";
 import logo from './data/logo.png';
 import logo2 from './data/heart.png';
 
@@ -13,6 +14,8 @@ function App() {
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState('pulp');
   const [favorites, setFavorites] = useState([]);
+  const [buttonPopup, setButtonPopup] = useState(false);
+  const [discMovie, setDiscMovie] = useState();
 
   const getMovieRequest = async () => {
     const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=4fd210c5`
@@ -58,7 +61,9 @@ function App() {
       </div>
       <div className="row">
         <MovieList 
-          movies={movies} 
+          movies={movies}
+          setButtonPopup={setButtonPopup}
+          setDiscMovie={setDiscMovie}
           favoriteComp={AddFavorites}
           handleFavoritesClick={addFavoriteMovie}
         />
@@ -73,6 +78,12 @@ function App() {
           handleFavoritesClick={removeFavoriteMovie}
         />
       </div>
+      <Description 
+        trigger={buttonPopup} 
+        setButtonPopup={setButtonPopup} 
+        discMovie={discMovie}
+        >
+      </Description>
     </div>
   );
 };
