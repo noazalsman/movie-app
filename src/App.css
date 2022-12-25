@@ -1,38 +1,73 @@
-.App {
+body {
+  background: #f3f3f3;
+  color: black;
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+.header {
   text-align: center;
+  letter-spacing: 2px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.movie-app > .row {
+	overflow-x: auto;
+	flex-wrap: nowrap;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+*::-webkit-scrollbar {
+  display: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.image-container {
+  height: 400px;
+  width: 250px;
+  border: 2px solid white;
+  border-radius: 2px;
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
+  overflow: hidden;
+	transition: transform 0.2s;
+  box-shadow: 10px 10px 5px rgb(147, 153, 155);
+}
+
+.image-container:hover {
+  cursor: pointer;
+  transform: scale(1.04);
+}
+
+.image-container:hover .overlay {
+  opacity: 1;
+}
+
+
+.overlay {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  transition: 0.5s ease;
+  opacity: 0;
+  bottom: 0;
+  font-size: 20px;
+  padding: 20px;
+  text-align: center;
+  color: white
+}
+
+.logo {
+  height: 200px;
+  width: 200px;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.sm_heart:hover {
+  color: red;
+  transform: scale(1.7);
+  transition: transform 0.3s;
+}
+
+.sm_ex:hover {
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  transform: scale(1.7);
+  transition: transform 0.3s;
 }
