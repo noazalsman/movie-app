@@ -31,10 +31,10 @@ body {
   box-shadow: 10px 10px 5px rgb(147, 153, 155);
 }
 
-/* .image-container:hover {
+.image-container:hover {
   cursor: pointer;
   transform: scale(1.04);
-} */
+}
 
 .image-container:hover .overlay {
   opacity: 1;
@@ -78,7 +78,7 @@ body {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.169);
+  background-color: rgba(0, 0, 0, 0.494);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -90,6 +90,7 @@ body {
   width: 100%;
   max-width: 640px;
   background-color: white;
+  box-shadow: 10px 10px 5px rgba(3, 4, 4, 0.611);
 }
 
 .popup-inner .close-btn {

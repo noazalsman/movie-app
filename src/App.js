@@ -10,6 +10,7 @@ import Description from "./components/Description";
 import logo from './data/logo.png';
 import logo2 from './data/heart.png';
 
+
 function App() {
   const [movies, setMovies] = useState([]);
   const [searchValue, setSearchValue] = useState('pulp');
